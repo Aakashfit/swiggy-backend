@@ -1,0 +1,30 @@
+const path = require('path');
+const express = require('express');
+const cors = require('cors');
+require('./models/db/connectDB');
+
+const restaurantRouter = require('./routes/restaurant')
+const customerRouter = require('./routes/customer')
+const deliveryPartnerRouter = require('./routes/deliveryPartner')
+
+const app = express()
+
+const PORT = process.env.PORT || 3001
+app.use(express.static(path.resolve(__dirname, '../client/build')))
+
+app.use(express.json())
+app.use(cors())
+
+app.use("/api/restaurants", restaurantRouter)
+app.use("/api/customers", customerRouter)
+app.use("/api/deliverypartners", deliveryPartnerRouter)
+
+app.get("/api", (req, res) => {
+  res.json({message: 'This is swiggy backend'})
+});
+
+
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on Port: ${PORT}`)
+});
