@@ -10,14 +10,15 @@ const {
   getAllOrders,
   addOrder
 } = require('../controllers/customer')
+const { authenticateToken } = require('../middlewares/authenticateToken')
 
 router.get('/', getAllCustomers)
 router.post('/register', registerCustomer)
 router.post('/login', loginCustomer)
-router.patch('/:id', updateCustomer)
-router.delete('/:id', deleteCustomer)
+router.patch('/:id/update', authenticateToken,updateCustomer)
+router.delete('/:id/delete', authenticateToken,deleteCustomer)
 
-router.get('/:id/orders', getAllOrders)
-router.post('/:id/orders', addOrder)
+router.get('/:id/orders', authenticateToken,getAllOrders)
+router.post('/:id/orders', authenticateToken,addOrder)
 
 module.exports = router

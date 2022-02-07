@@ -17,15 +17,15 @@ const {
 
 router.get('/', getAllRestaurants)
 router.get('/:id', getRestaurant)
-router.delete('/:id', authenticateToken, deleteRestaurant)
+router.delete('/:id/delete', authenticateToken, deleteRestaurant)
 router.post('/register', registerRestaurant)
 router.post('/login', loginRestaurant)
 
 
-router.get('/:id/items', getAllItems)
-router.post('/:id/items', addItem)
-router.patch('/:id/items/:itemId', updateItem)
-router.delete('/:id/items/:itemId', deleteItem)
+router.get('/:id/items', authenticateToken,getAllItems)
+router.post('/:id/items/add', authenticateToken,addItem)
+router.patch('/:id/items/:itemId/update', authenticateToken,updateItem)
+router.delete('/:id/items/:itemId/delete', authenticateToken,deleteItem)
 
 router.get('/:id/orders', getAllOrders)
 
