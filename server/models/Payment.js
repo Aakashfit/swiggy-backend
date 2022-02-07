@@ -1,19 +1,5 @@
 const mongoose = require("mongoose")
-const paymentSchema = new mongoose.Schema({
-    cardno:{
-        type:String,
-        required:true
-    },
-    expiry:{
-        type:Date,
-        required:true
-    },
-    cvv:{
-        type:String,
-        required:true
-    }
-    
-})
+const paymentSchema = new mongoose.Schema({})
 
-module.exports = mongoose.model( paymentSchema)
+module.exports = mongoose.model("Payment", paymentSchema)
 

@@ -15,7 +15,7 @@ const verifyJWTToken = (token) => {
 }
 
 const createJWTToken = (payload) => {
-  return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET )//{ expiresIn: '3 days'})
+  return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '3 days'})
 }
 
 module.exports = {
