@@ -2,13 +2,14 @@ const path = require('path')
 const mongoose = require("mongoose")
 require("dotenv").config({ path: path.resolve(__dirname, '../../.env') })
 
-const URI = process.env.MONGODB_CONNECTION_STRING
+//const URI ="mongodb+srv://swiggy:swiggybackend@cluster0.3n9jx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+// `process.env.MONGODB_CONNECTION_STRING`
 
-mongoose.connect(URI, {
-  useUnifiedTopology: true,
+mongoose.connect("mongodb+srv://swiggy:swiggybackend@cluster0.3n9jx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+  //useUnifiedTopology: true,
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+ // useCreateIndex: true,
+ // useFindAndModify: true,
 })
 
 mongoose.connection.on('connected', () => {
