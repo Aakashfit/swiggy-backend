@@ -8,10 +8,10 @@ const {
   deleteDeliveryPartner
 } = require('../controllers/deliveryPartner')
 
-router.get('/', getAllDeliveryPartners)
+router.get('/getAllDeliveryPartner', getAllDeliveryPartners)
 router.post('/register', registerDeliveryPartner)
 router.post('/login', loginDeliveryPartner)
-router.patch('/:id', updateDeliveryPartner)
-router.delete('/:id', deleteDeliveryPartner)
+router.patch('/:id/update', updateDeliveryPartner)
+router.delete('/:id/delete', deleteDeliveryPartner)
 
 module.exports = router

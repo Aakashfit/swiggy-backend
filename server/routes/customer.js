@@ -11,13 +11,13 @@ const {
   addOrder
 } = require('../controllers/customer')
 
-router.get('/', getAllCustomers)
+router.get('/getAllcustomers', getAllCustomers)
 router.post('/register', registerCustomer)
 router.post('/login', loginCustomer)
-router.patch('/:id', updateCustomer)
-router.delete('/:id', deleteCustomer)
+router.patch('/:id/update', updateCustomer)
+router.delete('/:id/delete', deleteCustomer)
 
-router.get('/:id/orders', getAllOrders)
-router.post('/:id/orders', addOrder)
+router.get('/:id/orders/allOrders', getAllOrders)
+router.post('/:id/orders/add', addOrder)
 
 module.exports = router

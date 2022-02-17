@@ -15,19 +15,19 @@ const {
   getAllOrders,
 } = require('../controllers/restaurant')
 
-router.get('/', getAllRestaurants)
+router.get('/getAllResturants', getAllRestaurants)
 router.get('/:id', getRestaurant)
-router.delete('/:id', authenticateToken, deleteRestaurant)
+router.delete('/:id/delete', authenticateToken, deleteRestaurant)
 router.post('/register', registerRestaurant)
 router.post('/login', loginRestaurant)
 
 
-router.get('/:id/items', getAllItems)
-router.post('/:id/items', addItem)
-router.patch('/:id/items/:itemId', updateItem)
-router.delete('/:id/items/:itemId', deleteItem)
+router.get('/:id/items/getAll', getAllItems)
+router.post('/:id/items/add', addItem)
+router.patch('/:id/items/:itemId/update', updateItem)
+router.delete('/:id/items/:itemId/delete', deleteItem)
 
 router.get('/:id/orders', getAllOrders)
 
 
-module.exports = router
+module.exports = router;
