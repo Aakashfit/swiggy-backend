@@ -51,9 +51,9 @@ app.post('/payment', function(req, res){
       address: { 
           line1: 'NEW SAHARA ESTATE', 
           postal_code: '110092', 
-          city: 'New Delhi', 
-          state: 'Delhi', 
-          country: 'India', 
+          city: 'ROHINI', 
+          state: 'NEW DELHI', 
+          country: 'INDIA', 
       } 
   }) 
   .then((customer) => { 
@@ -61,7 +61,7 @@ app.post('/payment', function(req, res){
       return stripe.charges.create({ 
           amount: 7000,     
           description: 'BILL AMOUNT', 
-          currency: 'USD', 
+          currency: 'INR', 
           customer: customer.id 
       }); 
   }) 
