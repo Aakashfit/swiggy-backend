@@ -42,7 +42,8 @@ app.get("/payment",(req,res)=>{
         key:publishable_key
     })
 })
-app.post('/payment', function(req, res){ 
+app.post('/payment', function(req, res)
+{ 
  
   stripe.customers.create({ 
       email: req.body.stripeEmail, 
