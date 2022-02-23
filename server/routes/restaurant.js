@@ -22,8 +22,8 @@ router.post('/register', registerRestaurant)
 router.post('/login', loginRestaurant)
 
 
-router.get('/:id/items/getAll', getAllItems)
-router.post('/:id/items/add', addItem)
+router.get('/:id/items/getAll',authenticateToken, getAllItems)
+router.post('/:id/items/add',authenticateToken, addItem)
 router.patch('/:id/items/:itemId/update', updateItem)
 router.delete('/:id/items/:itemId/delete', deleteItem)
 
